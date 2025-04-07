@@ -5,7 +5,7 @@ import itertools
 from collections import OrderedDict
 import numpy as np
 from scipy.interpolate import interp1d
-from scipy.integrate import quad,dblquad,romberg,simps
+from scipy.integrate import quad,dblquad,romb,simpson
 from scipy.ndimage.filters import convolve
 from scipy import optimize
 from scipy.special import hyp2f1

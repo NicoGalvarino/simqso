@@ -7,7 +7,7 @@ import ast
 from copy import copy
 import numpy as np
 from scipy.interpolate import interp1d
-from scipy.integrate import simps
+from scipy.integrate import simpson
 from scipy.signal import convolve
 from scipy.stats import norm,lognorm,expon
 from astropy.io import fits

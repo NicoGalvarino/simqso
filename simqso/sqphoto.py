@@ -4,7 +4,7 @@ import os
 import numpy as np
 from collections import OrderedDict
 from scipy.interpolate import interp1d
-from scipy.integrate import simps
+from scipy.integrate import simpson
 from scipy.constants import c
 c_Angs = c*1e10
 
