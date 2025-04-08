@@ -1412,7 +1412,7 @@ class VW01FeTemplateGrid(object):
             wi1,wi2 = np.searchsorted(wave,(w1,w2))
             feTemplate[wi1:wi2] *= fscl
         # calculate the total flux (actually, EW since continuum is divided out)
-        flux0 = simps(feTemplate,wave)
+        flux0 = simpson(feTemplate,wave)
         FWHM_1Zw1 = 900.
         c_kms = 3e5
         sigma_conv = np.sqrt(FWHM_kms**2 - FWHM_1Zw1**2) / \
@@ -1422,7 +1422,7 @@ class VW01FeTemplateGrid(object):
         gkern = np.exp(-x**2/(2*sigma_conv**2)) / (np.sqrt(2*np.pi)*sigma_conv)
         broadenedTemp = convolve(feTemplate,gkern,mode='same')
         feFlux = broadenedTemp
-        feFlux *= flux0/simps(feFlux,wave)
+        feFlux *= flux0/simpson(feFlux,wave)
         return wave,feFlux
     def get(self,z):
         zi = np.searchsorted(self.zbins,z)
